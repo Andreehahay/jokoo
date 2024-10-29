@@ -113,3 +113,56 @@
     transform: rotate(90deg);
     transition-delay: 0.4s;
   }
+
+  .photo-heart {
+    position: absolute;
+    top: 110px;
+    left: 45px;
+    transform: translateX(-50%) rotate(-43deg);
+    width: 10px;
+    height: 10px;
+    background: url('palpale.jpg') no-repeat center center / cover;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.5s ease; /* Added opacity transition */
+    z-index: 5;
+    opacity: 0; /* Initial hidden state */
+}
+
+.flap .photo-heart {
+    opacity: 1; /* Make visible when envelope opens */
+}
+
+
+.photo-heart:before,
+.photo-heart:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.photo-heart:before {
+    top: -5px;
+    left: 0;
+}
+
+.photo-heart:after {
+    left: 5px;
+    top: 0;
+}
+
+.photo-heart:hover {
+    transform: rotate(45deg) scale(1.1);
+}
+
+.photo-circle {
+    width: 20px; /* Adjust the width as desired */
+    height: 20px; /* Adjust the height as desired */
+    background: url('palpale.jpg') no-repeat center center / cover; /* Add your photo */
+    border-radius: 50%; /* Makes the div circular */
+    margin-left: 5px; /* Space between text and the photo */
+    display: inline-block; /* Make it align next to the text */
+    vertical-align: middle; /* Align it vertically with the text */
+}
